@@ -1,0 +1,27 @@
+# Środowisko zweryfikowane na klastrze Athena (ACK Cyfronet AGH), Python 3.13
+# GPU: NVIDIA A100 40 GB, CUDA 12.4
+#
+# Instalacja:
+#   python -m venv .venv
+#   source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Uwaga: torch jest zbudowany pod CUDA 12.4 (sufiks +cu124). W razie innej
+# wersji CUDA należy zainstalować odpowiedni build z https://pytorch.org .
+
+torch==2.6.0
+torchvision==0.21.0
+torchaudio==2.6.0
+pytorch-lightning==2.6.1
+torchmetrics==1.9.0
+
+numpy==2.4.3
+scipy==1.18.0
+opencv-python-headless==4.13.0.92
+pillow==12.1.1
+matplotlib==3.10.9
+tqdm==4.67.3
+
+# Metryki jakości
+pytorch-msssim==1.0.0   # SSIM / MS-SSIM (trening i ewaluacja)
+lpips==0.1.4            # metryka percepcyjna LPIPS (eval_lpips.py)
